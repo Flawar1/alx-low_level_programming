@@ -1,20 +1,14 @@
 #include "main.h"
 #include <stdio.h>
 
-/**
- * main - check the code for
- *
- * Return: Always 0.
- */
+/* Function prototype for the leet() function */
+char *leet(char *s);
+
 int main(void)
 {
     char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
-    char *p;
-
-    char *leet(char *);
+    char *p = leet(s);
     printf("%s", p);
-    char *p = NULL;
-      p = leet(s);
-    printf("%s", s);
-    return (0);
+    return 0;
 }
+
