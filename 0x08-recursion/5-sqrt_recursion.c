@@ -1,5 +1,8 @@
 #include "main.h"
-#include <math.h>
+#include <stdio.h>
+
+
+int _sqrt(int n, int i);
 
 /**
  * _sqrt_recursion - main funct
@@ -8,7 +11,7 @@
  */
 int _sqrt_recursion(int n)
 {
-	return (__sqrt(n, 1));
+	return (_sqrt(n, 1));
 }
 
 /**
