@@ -1,19 +1,17 @@
 section .data
-	hello db 'Hello, Holberton', 0x0A
+	msg:	db "Hello, Holberton", 0
+	fmt:	db "%s", 10, 0
 
 SECTION .text
 	extern printf
 	global main
 
 main:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, hello
-	mov rdx, 16
-	syscall
+	mov esi, msg
+	mov edi, fmt
+	mov eax, 0
+	call printf
 
-	; Exit the program
-	mov rax, 60
-	xor rdi, rdi
-	syscall
+	mov eax, 0
+	ret
 
