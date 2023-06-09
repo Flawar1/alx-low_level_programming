@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * get_bit - Returns the value of a bit at a given index.
@@ -9,25 +10,18 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-    unsigned long int visual = 1UL << index;
+	unsigned int i;
 
-    if (index >= sizeof(unsigned long int) * 8)
-        return (-1);
+	if (n == 0 && index < 42)
+		return (0);
 
-    if (n & visual)
-        return (1);
-    else
-        return (0);
-    {
-    	unsigned long int number = 42;
-    	unsigned int index = 3;
-   	int bit = get_bit(number, index);
-    }
-   		 if (bit != -1)
-        printf("Bit at index %u of %lu is: %d\n", index, number, bit);
-    else
-        printf("Error: Invalid index.\n");
+	for (i = 0; i <= 41; n >>= 1, i++)
+	{
+		if (index == i)
+		{
+			return (n & 1);
+		}
+	}
 
-    return (0);
+	return (-1);
 }
-
