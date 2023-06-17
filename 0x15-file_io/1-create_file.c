@@ -10,7 +10,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	int letters;
+	int nletters;
 	int fwd;
 
 	if (!filename)
@@ -24,10 +24,10 @@ int create_file(const char *filename, char *text_content)
 	if (!text_content)
 		text_content = "";
 
-	for (letters = 0; text_content[letters]; letters++)
+	for (nletters = 0; text_content[nletters]; nletters++)
 		;
 
-	fwd = write(fd, text_content, letters);
+	fwd = write(fd, text_content, nletters);
 
 	if (fwd == -1)
 		return (-1);
